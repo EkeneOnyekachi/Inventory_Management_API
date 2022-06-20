@@ -1,21 +1,29 @@
-#import os
-JWT_SECRET_KEY = "c07e154e8067407c909be11132e7d1bcee77542afd6c26ba613e2ffd9c3375ea"
-JWT_ALGORITH = "HS256"
-JWT_EXPIRATION_TIME_MINUTES = 60 * 24 * 5
+from os import getenv
+from pathlib import Path
+from dotenv import load_dotenv
+
+env_path = Path(".", ".env")
+load_dotenv(dotenv_path=env_path)
 
 
+JWT_SECRET_KEY = getenv("SECRET_KEY")
+JWT_ALGORITH = getenv("ALGORITH")
+JWT_EXPIRATION_TIME_MINUTES = getenv("EXPIRATION_TIME_MINUTES")
 
-TOKEN_DISCRIPTION ="it checks email and password if there are true it returns jwt token to you"
-TOKEN_SUMMARY ="it returns JWT Token"
 
-DB_HOST = "localhost"
-DB_HOST_PRODUCTION = "10.110.0.2"
-DB_USER = "postgres"
-DB_PASSWORD = "11223344E"
-DB_NAME = "inventory_db"
+# local DB Host
+DB_HOST = getenv("db_host")
+DB_USER = getenv("db_user")
+DB_PASSWORD = getenv("db_pass")
+DB_NAME = getenv("db_name")
 DB_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
-#DB_URL_PRODUCTION = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST_PRODUCTION}/{DB_NAME}"
-DB_URL_PRODUCTION = f"postgres://lrcuatcaglpgao:1bbf8d8bffeac7d9e3025d57765590c79e740a596c3b0ecd850b14b1d7cc08ac@ec2-18-210-159-154.compute-1.amazonaws.com:5432/d7cjjf5ebbf0s3"
 
 
-
+# Production DB Host
+PRO_DB_HOST = getenv("db_host")
+PRO_DB_USER = getenv("db_user")
+PRO_DB_PASSWORD = getenv("db_pass")
+PRO_DB_NAME = getenv("db_name")
+DB_URL_PRODUCTION = (
+    f"postgresql://{PRO_DB_USER}:{PRO_DB_PASSWORD}@{PRO_DB_HOST}/{PRO_DB_NAME}"
+)

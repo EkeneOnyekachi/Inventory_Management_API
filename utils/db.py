@@ -8,7 +8,7 @@ async def execute(query, is_many, values=None):
         await db.execute(query=query, values=values)
 
 
-async def fetch(query, is_one,values=None):
+async def fetch(query, is_one, values=None):
     if is_one:
         result = await db.fetch_one(query=query, values=values)
         if result is None:
@@ -25,5 +25,3 @@ async def fetch(query, is_one,values=None):
                 out.append(dict(row))
 
     return out
-
-

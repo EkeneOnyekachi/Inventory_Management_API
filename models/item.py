@@ -1,8 +1,4 @@
 from pydantic import BaseModel, Field
-from typing import Optional
-
-
-
 
 
 class Item(BaseModel):
@@ -10,7 +6,7 @@ class Item(BaseModel):
     quantity: int
     price: float
     description: str
-    owner:str
+    owner: str
 
 
 class ItemDelete(BaseModel):
