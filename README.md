@@ -1,7 +1,7 @@
 # API Reference
 
 ## Getting Started
-- Base URL: Currently this app can only be run locally and is not hosted as a base URL. The backend app is hosted at the default, http://127.0.0.1:8000/.
+- Base URL: Currently this app can only be run locally and is not hosted as a base URL. The API is hosted at the default, http://127.0.0.1:8000/.
 - AUthentication:This version of the application requires authentication.
 
 
