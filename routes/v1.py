@@ -25,7 +25,7 @@ async def users_registration(user: User):
     user_info["password"] = get_hashed_password(user_info["password"])
     user_obj = User(**user_info)
     new_user = await db_insert_user(user_obj)
-    return {"result": "Registration successful"}
+    return {"message": "Registration successful"}
 
 
 @Blog_v1.post("/login", tags=["User"])
@@ -46,7 +46,7 @@ async def get_users_validation(
 )
 async def add_item(item: Item, jwt: bool = Depends(check_jwt_token)):
     await db_insert_item(item)
-    return {"result": "item added successful"}
+    return {"message": "item added successful"}
 
 
 @Blog_v1.get("/item", tags=["Item"])
@@ -77,7 +77,7 @@ async def update_item(
     jwt: bool = Depends(check_jwt_token),
 ):
     await db_update_item(id, name, quantity, price, description)
-    return {"result": "item is updated"}
+    return {"message": "item is updated"}
 
 
 @Blog_v1.delete("/item/{id}", tags=["Item"])
