@@ -1,5 +1,9 @@
 # 3RY
-3ry is an Inventory management API is design to source and store inventories, thier quantity and values.
+3ry is an Inventory management API is design to track inventory levels, orders, sales and deliveries, built with FastAPI and PostgreSQL
+
+# Project Status
+Project is currently in development
+
 # API Reference
 ## Getting Started
 - Base URL: Currently this app can only be run locally and is not hosted as a base URL. The API is hosted at the default, http://127.0.0.1:8000/.
