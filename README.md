@@ -1,3 +1,4 @@
+# 3RY
 Inventory management API is design to source and store inventories finished goods (products) and values.
 # API Reference
 ## Getting Started
